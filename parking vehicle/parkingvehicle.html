@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+
+    <title>React App</title>
+  </head>
+
+  <body>
+    <div id="root"></div>
+
+    <script type="text/babel">
+      
+      let car = 0
+      let bike = 0
+      let scooty = 0 
+      let bicycle = 0
+      
+      function handleIncrease(vehicle){
+      if (vehicle == "car") car++;
+      else if (vehicle == "bike") bike++;
+      else if (vehicle == "scooty") scooty++;
+      else bicycle++;
+      
+      rootElement.render(<App />);
+      }
+      
+      function handleDecrease(vehicle) {
+      if (vehicle == "car" && car>0) car--;
+      else if (vehicle == "bike" && bike > 0) bike--;
+      else if (vehicle == "scooty" && scooty > 0) scooty--;
+      else if (vehicle == "bicycle" && bicycle > 0) bicycle--;
+
+      rootElement.render(<App />);
+      }
+      
+      
+
+      const App = () => (
+        <>
+          <p>List of all the vehicles count in the parking.</p>
+          <ol>
+            <li>
+              <p>
+                <b>Car: {car}</b> &emsp;
+                <button onClick={() => handleIncrease("car")}>Increase</button>&emsp;
+                <button onClick={() => handleDecrease("car")}>Decrease</button>
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Bike: {bike}</b> &emsp;
+                <button onClick={() => handleIncrease("bike")}>Increase</button>&emsp;
+                <button onClick={() => handleDecrease("bike")}>Decrease</button>
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Scooty: {scooty}</b> &emsp;
+                <button onClick={() => handleIncrease("scooty")}>Increase</button>&emsp;
+                <button onClick={() => handleDecrease("scooty")}>Decrease</button>
+              </p>
+            </li>
+            <li>
+              <p>
+                <b>Bicycle: {bicycle}</b> &emsp;
+                <button onClick={() => handleIncrease("bicycle")}>Increase</button>&emsp;
+                <button onClick={() => handleDecrease("bicycle")}>Decrease</button>
+              </p>
+            </li>
+          </ol>
+        </>
+      );
+
+      const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+      rootElement.render(<App />);
+    </script>
+  </body>
+</html>

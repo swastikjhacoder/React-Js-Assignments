@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+}
+
+.Product_Grid {
+    grid-gap: 2rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: repeat(3,1fr);
+    margin: 3rem 20rem;
+}
+
+.Product_Container {
+    align-items: center;
+    border-radius: 10px;
+    box-shadow: 0 2px 8px 0 rgba(64,77,148,.4);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem;
+    transition: all .25s ease-in-out;
+}
+
+.ProductImage_Container {
+    flex-grow: 1;
+    flex-shrink: 1;
+    flex-basis: 0%;
+    justify-content: center;
+}
+
+.ProductImage_Container img {
+    margin: auto;
+    align-items: center;
+    object-fit: contain;
+    height: 300px;
+}
+
+.Product_Details {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.Product_Name {
+    color: #224957;
+    font-family: Inter,sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    padding: 8px 0;
+}
+
+.Product_Options {
+    align-items: center;
+    display: flex;
+    font-size: 1rem;
+    justify-content: space-between;
+    width: 100%;
+    color: #224957;
+}
+
+.ProductAdd_Button {
+    color: #fff;
+    font-size: 1.75rem;
+    padding: 0.75rem 0;
+    transition: all .3s ease-in-out;
+    width: 50%;
+    width: 100%;
+    background: #7064e5;
+    border: 1px solid #7064e5;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.ProductAdd_Button:hover {
+    background: #fff;
+    color: #7064e5;
+}

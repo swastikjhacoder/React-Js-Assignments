@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>Starting with React App</title>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id = "root"></div>
+        <script type="text/babel">
+            function App(){
+                let students=[
+                    {
+                        name: "Alexa",
+                        age: 10,
+                        marks: 85
+                    },
+                    {
+                        name: "Amazon",
+                        age: 12,
+                        marks: 90
+                    },
+                    {
+                        name: "Google",
+                        age: 15,
+                        marks: 95
+                    },
+                ];
+                return(
+                    <>
+                    <h1>Student Details</h1>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Age</th>
+                                <th>Marks</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {students.map((student, index) => (
+                            <tr key={index}>
+                                <td>{student.name}</td>
+                                <td>{student.age}</td>
+                                <td>{student.marks}</td>
+                            </tr>
+                        ))}
+                        </tbody>
+                    </table>
+                    </>
+                )
+            }
+
+            ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+        </script>
+    </body>
+</html>

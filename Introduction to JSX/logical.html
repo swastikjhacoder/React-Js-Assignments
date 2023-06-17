@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>React App</title>
+        <link rel="stylesheet" href="index.css">
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id = "root"></div>
+        <script type="text/babel">
+
+            function App(){
+                let isLoggedIn = true;
+                let fname = "Alexa";
+                let lname = "Diaz"; 
+                
+                return (
+                    <>
+                        <h1>Hello {isLoggedIn? lname || fname : "User"}!</h1>
+                        {isLoggedIn && <p>Welcome to the portal</p>}
+                    </>);
+            }
+
+            ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+        </script>
+    </body>
+</html>

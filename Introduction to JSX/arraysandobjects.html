@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>React App</title>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id = "root"></div>
+        <script type="text/babel">
+            // function App(){
+            //     let numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+            //     const isEven = (value) => value % 2 === 0;
+            //     let obj = {
+            //         name: "Alexa",
+            //         age: 10
+            //     }
+            //     return(
+            //         <>
+            //         <h1>Arrays and Objects in JavaScript</h1>
+            //         {numbers.map((num) => <h2>{num}</h2>)}
+            //         <h2>{obj.name}</h2>
+            //         </>
+            //     )
+            // }
+
+            // ReactDOM.createRoot(document.getElementById("root")).render(<App/>);
+            const App = () => {
+                const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                var output = numbers.filter(x => x % 2 === 0)
+                return (
+                <>
+                    <h1>ES6 Array Iteration Methods</h1>
+                    {/* iterate over array here */}
+                    {output.map((num) => <h3>{num}</h3>)}
+                </>
+                );
+            };
+
+            const rootElement = ReactDOM.createRoot(document.getElementById("root"));
+            rootElement.render(<App />);
+        </script>
+    </body>
+</html>

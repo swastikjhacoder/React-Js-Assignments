@@ -1,0 +1,58 @@
+<html>
+    <head>
+        <title>React App</title>
+
+        <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+        <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    </head>
+    <body>
+        <div id = "root"></div>
+
+        <script type="text/babel">
+            function App(){
+                const cars = [
+                    {
+                        name: "Audi",
+                        year: 2010,
+                        img: "https://cdn-icons-png.flaticon.com/128/741/741407.png"
+                    },
+                    {
+                        name: "Naxa",
+                        year: 2014,
+                        img: "https://cdn-icons-png.flaticon.com/128/741/741407.png"
+                    },
+                    {
+                        name: "BMW",
+                        year: 2012,
+                        img: "https://cdn-icons-png.flaticon.com/128/741/741407.png"
+                    }
+                ];
+                return(
+                    <>
+                        <h1>Car Details</h1>
+                        <table border="1px">
+                            <thead>
+                                <tr>
+                                    <th>IMG</th>
+                                    <th>NAME</th>
+                                    <th>YEAR</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {cars.map((car, index)=> (
+                                    <tr key={index}>
+                                        <td><img src={car.img} width="30px"/></td>
+                                        <td>{car.name}</td>
+                                        <td>{car.year}</td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </>
+                )
+            }
+            ReactDOM.createRoot(document.getElementById("root")).render(<App />);
+        </script>
+    </body>
+</html>
